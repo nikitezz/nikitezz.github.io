@@ -26,55 +26,25 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h2>My portfolio...</h2>
-							<p>You are presented with my projects. Check it out )</p>
+							<h2 style="text-align: center;">Write me							</h2>
+							<p style="text-align: center;">Write your email address and I will contact you..</p>
+                            <br>
 						</header>
-						<span class="image"><img src="../images/1.jpg" alt="" /></span>
-					</div>
-					<a href="#one" class="goto-next scrolly">Next</a>
-				</section>
 
-				<section id="one" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="../images/7.jpg" alt="" /></span>
-					<div class="content">
-						<div class="container">
-							<div class="row">
-								<div class="col-4 col-12-medium">
-									<header>
-										<img src="../images/5.jpg" alt="" class="img-portfolio">
-									</header>
-								</div>
-								<div class="col-5 col-12-medium">
-									<p>Interactive site about the Gomel region, with the ability to view information on the map about cultural values..</p>
-									<div class="col-2 col-5-xsmall"><a href="https://gomelggaek.vercel.app/"><input type="submit" value="Visit" class="fit primary" /></a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<a href="#two" class="goto-next scrolly">Next</a>
+						<form method="post" action="https://sheetdb.io/api/v1/th6o8rxmzz4rt" id="sheetdb" class="cta">
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-12 col-12-xsmall"><input type="email" name="data[email]" id="email" required autocomplete="off" placeholder="Your Email Address" /></div>
+                                <div class="col-12 col-12-xsmall"><input type="text" name="data[name]" id="name" required autocomplete="off" placeholder="Your Name" /></div>
+                                <div class="col-12 col-12-xsmall"><textarea name="data[message]" id="message" cols="30" rows="5" placeholder="Your message"></textarea></div>
+                            </div><br>
+                            <div class="col-4 col-12-xsmall"><input type="submit" value="Send" class="fit primary" /></div>
 
-				</section>
-
-				<section id="two" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="../images/7.jpg" alt="" /></span>
-					<div class="content">
-						<div class="container">
-							<div class="row">
-								<div class="col-4 col-12-medium">
-									<header>
-										<img src="../images/6.jpg" alt="" class="img-portfolio">
-									</header>
-								</div>
-								<div class="col-5 col-12-medium">
-									<p>Memorial site about Afghanistan with the ability to view information about events in wartime and more...</p>
-									<div class="col-2 col-5-xsmall"><a href="https://memory-ggaekafghans.vercel.app/"><input type="submit" value="Visit" class="fit primary" /></a></div>
-								</div>
-							</div>
-						</div>
+						</form>
 					</div>
 					<a href="#footer" class="goto-next scrolly">Next</a>
-
 				</section>
+
+				
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
@@ -99,6 +69,20 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+            <script>
+				var form = document.getElementById('sheetdb');
+				form.addEventListener("submit",e=>{
+					e.preventDefault();
+					fetch(form.action,{
+						method: "POST",
+						body: new FormData(document.getElementById("sheetdb")),
+					}).then(
+							response =>response.json(),
+							alert("Данные отправлены успешно! Автор свяжется с вами)")
+						);
+						
+					});
+			</script>
 
 	</body>
 </html>
