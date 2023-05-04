@@ -71,8 +71,13 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
-
 /* Basic */
+
+	.img-portfolio{
+		width: 350px;
+		height: 200px;
+		border-radius: 10px ;
+	}
 
 	html {
 		box-sizing: border-box;

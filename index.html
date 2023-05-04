@@ -16,13 +16,12 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="#">Portfolio</a></li>
+							<li><a href="portfolio/index.html">Portfolio</a></li>
 							<li><a href="#">Photo gallery							</a></li>
 							<li><a href="#" class="button primary">Sign Up</a></li>
 						</ul>
 					</nav>
 				</header>
-
 				<section id="banner">
 					<div class="content">
 						<header>
@@ -36,6 +35,7 @@
 				</section>
 
 				<section id="one" class="spotlight style1 bottom">
+					
 					<span class="image fit main"><img src="images/3.jpg" alt="" /></span>
 					<div class="content">
 						<div class="container">
@@ -55,9 +55,12 @@
 							</div>
 						</div>
 					</div>
+					<a href="#five" class="goto-next scrolly">Next</a>
+
 				</section>
 
 				<section id="five" class="wrapper style2 special fade">
+					
 					<div class="container">
 						<header>
 							<h2>Order service							</h2>
@@ -72,7 +75,7 @@
 						</form>
 					</div>
 				</section>
-
+				
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
@@ -105,11 +108,9 @@
 						method: "POST",
 						body: new FormData(document.getElementById("sheetdb-form")),
 					}).then(
-							response =>response.json()
-						).then((html) =>{
-							window.open('index.html','_blank');
+							response =>response.json(),
 							alert("Данные отправлены успешно! Автор свяжется с вами)")
-						});
+						);
 						
 					});
 			</script>
